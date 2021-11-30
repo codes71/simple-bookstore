@@ -157,7 +157,7 @@ a{
     background-color: rgb(236, 236, 228);
   }
   .slider-part .detailBox{
-    padding: 0 50px;
+    padding: 0 80px;
     }
   .slider-part .detailBox h1{
     font-weight: bold;
@@ -183,4 +183,14 @@ a{
   .slider-part .detailBox h4{
     color: #44b89d;
     font-weight: bold;
+  }
+  /* Top Trending Part */
+
+  .topPart{
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .topPart .bookCard{
+    display: inline;
   }
