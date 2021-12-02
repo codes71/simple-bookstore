@@ -11,146 +11,175 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <header class="header_section">
-      <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
-            <span> EBookLover </span>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <header class="top">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span> EBookLover </span>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link pl-lg-0" href="index.html"
-                  >Home <span class="sr-only">(current)</span></a
-                >
-              </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link pl-lg-0" href="index.html"
+                    >Home <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> Go to Library</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <div class="dropdown">
+                    <a href="#" class="nav-link">Category</a>
+                    <div class="dropdown-content">
+                      <a href="#">Fiction</a>
+                      <a href="#">Suspense</a>
+                      <a href="#">Based on true stories</a>
+                      <a href="./book.html">...</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <i class="bi bi-person-circle"></i>
+                  <a class="nav-link" href="contact.html" style="display: inline-block;">Sign In</a>
+                </li> -->
+              
+              <from class="search_form">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search here..."
+                />
+                <button class="" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </from>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About</a>
+                  <i class="bi bi-person-circle"></i>
+                  <a class="nav-link" href="account.html" style="display: inline-block;">Sign In</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="categories.html">Categories</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html"> Blog </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-            </ul>
-            <from class="search_form">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search here..."
-              />
-              <button class="" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </from>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <section class="slider-part">
-      <div
-        id="Carousel"
-        class="carousel carousel-dark slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm detailBox">
-                  <h4>EBookLover Bookstore</h4>
-                  <h1>For Everything You wanna Read!!</h1>
-                  <p class="my-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                    cumque autem quasi maxime ipsum saepe quam eveniet natus, at
-                    nobis.
-                  </p>
-                  <a href="#">Read More</a>
+              </ul>
+            </div>
+          </nav>
+      <section class="slider-part">
+        <div
+          id="Carousel"
+          class="carousel carousel-dark slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm detailBox">
+                    <h4>EBookLover Bookstore</h4>
+                    <h1>For Everything You wanna Read!!</h1>
+                    <p class="my-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Est cumque autem quasi maxime ipsum saepe quam eveniet
+                      natus, at nobis.
+                    </p>
+                    <a href="#">Read More</a>
+                  </div>
+                  <div class="col-md">
+                    <img
+                      src="./images/jaredd-craig-HH4WBGNyltc-unsplash.jpg"
+                      width="80%" 
+                    />
+                  </div>
                 </div>
-                <div class="col-md">
-                  <img src="./images/jaredd-craig-HH4WBGNyltc-unsplash.jpg" width="100%" />
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm detailBox">
+                    <h4>EBookLover Bookstore</h4>
+                    <h1>For Everything You wanna Read!!</h1>
+                    <p class="my-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Est cumque autem quasi maxime ipsum saepe quam eveniet
+                      natus, at nobis.
+                    </p>
+                    <a href="#">Read More</a>
+                  </div>
+                  <div class="col-md">
+                    <img
+                      src="./images/keren-fedida-BfGuQJpDolQ-unsplash.jpg"
+                      width="100%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm detailBox">
+                    <h4>EBookLover Bookstore</h4>
+                    <h1>For Everything You wanna Read!!</h1>
+                    <p class="my-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Est cumque autem quasi maxime ipsum saepe quam eveniet
+                      natus, at nobis.
+                    </p>
+                    <a href="#">Read More</a>
+                  </div>
+                  <div class="col-md">
+                    <img
+                      src="./images/roman-kraft-X1exjxxBho4-unsplash.jpg"
+                      width="100%"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm detailBox">
-                  <h4>EBookLover Bookstore</h4>
-                  <h1>For Everything You wanna Read!!</h1>
-                  <p class="my-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                    cumque autem quasi maxime ipsum saepe quam eveniet natus, at
-                    nobis.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
-                <div class="col-md">
-                  <img src="./images/keren-fedida-BfGuQJpDolQ-unsplash.jpg" width="100%" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm detailBox">
-                  <h4>EBookLover Bookstore</h4>
-                  <h1>For Everything You wanna Read!!</h1>
-                  <p class="my-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                    cumque autem quasi maxime ipsum saepe quam eveniet natus, at
-                    nobis.
-                  </p>
-                  <a href="#">Read More</a>
-                </div>
-                <div class="col-md">
-                  <img src="./images/roman-kraft-X1exjxxBho4-unsplash.jpg" width="100%" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#Carousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#Carousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#Carousel"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#Carousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
+      </section>
+    </header>
+    </div>
     <section class="topPart container justify-content-center">
       <h1 class="text-center">Top Trending books for you</h1>
       <div class="row trending">
