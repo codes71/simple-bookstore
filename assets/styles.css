@@ -9,7 +9,7 @@ a {
 }
 header {
   overflow-x: hidden;
-  background-color: rgb(230, 225, 217);
+  
 }
 
 /* For account Login */
@@ -436,6 +436,25 @@ button:hover {
   font-size: 0.9em;
   color: rgba(0, 0, 0, 0.5);
 }
+
+
+/* for book cathegory */
+.card{
+  margin: 0 0.8em;
+}
+.cathegory .catheList{
+  list-style-type: none;
+  padding-top: 1.5em;
+}
+.cathegory .items{
+  padding: 2px 0 0 5px;
+  margin: 5px 0;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  background-color: rgb(238, 169, 65);
+}
+
+
 
 /* footer */
 
