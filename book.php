@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <<?php
+    <?php
     session_start();
     include('db_connect.php');
     include('header.php');
@@ -112,7 +112,7 @@
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7 col-sm-5">
             <div class="row row-col-4">
-            <div class="card mb-3 py-3 px-3" style="width: 13rem;">
+            <!-- <div class="card mb-3 py-3 px-3" style="width: 13rem;">
                 <img src="./Images/Book 10.jpg" class="card-img-top" alt="...">
                 <div class="card-body" style="background: transparent;">
                     <h5 class="card-title bookName">Book Name</h5>
@@ -120,61 +120,24 @@
                     <a href="#" class="btn btn-primary">Buy</a>
                     <span class="pricetag">5</span>
                 </div>
-            </div>
-            <div class="card col-2 mb-3 py-3 px-3" style="width: 13rem;">
-                <img src="./Images/Book 10.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="background: transparent;">
-                    <h5 class="card-title bookName">Book Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consecteturadipisicing elit. Hic, ex.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                    <span class="pricetag">5</span>
-                </div>
-            </div>
-            <div class="card mb-3 py-3 px-3" style="width: 13rem;">
-                <img src="./Images/Book 10.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="background: transparent;">
-                    <h5 class="card-title bookName">Book Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consecteturadipisicing elit. Hic, ex.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                    <span class="pricetag">5</span>
-                </div>
-            </div>
-            <div class="card mb-3 py-3 px-3" style="width: 13rem;">
-                <img src="./Images/Book 10.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="background: transparent;">
-                    <h5 class="card-title bookName">Book Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consecteturadipisicing elit. Hic, ex.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                    <span class="pricetag">5</span>
-                </div>
-            </div>
-            <div class="card mb-3 py-3 px-3" style="width: 13rem;">
-                <img src="./Images/Book 10.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="background: transparent;">
-                    <h5 class="card-title bookName">Book Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consecteturadipisicing elit. Hic, ex.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                    <span class="pricetag">5</span>
-                </div>
-            </div>
-            <div class="card mb-3 py-3 px-3" style="width: 13rem;">
-                <img src="./Images/Book 10.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="background: transparent;">
-                    <h5 class="card-title bookName">Book Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consecteturadipisicing elit. Hic, ex.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                    <span class="pricetag">5</span>
-                </div>
-            </div>
-            <div class="card mb-3 py-3 px-3" style="width: 13rem;">
-                <img src="./Images/Book 10.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="background: transparent;">
-                    <h5 class="card-title bookName">Book Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consecteturadipisicing elit. Hic, ex.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                    <span class="pricetag">5</span>
-                </div>
-            </div>
+            </div> -->
+            <?php 
+            echo "<br>";
+              $result = $conn->query("SELECT * from books");
+              var_dump($conn);
+              echo "<br>";
+              var_dump($result);
+              if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<br> id: ". $row["ID"]. " - Name: ". $row["title"]. " " . $row["description"] . "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+
+              
+            ?>
             </div> 
         </div>
 
