@@ -1,31 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookstore</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="./assets/styles.css" />
+    <<?php
+    session_start();
+    include('db_connect.php');
+    include('header.php');
+    ?>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg custom_nav-container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <span> EBookLover </span>
       </a>
       <button
@@ -43,19 +27,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link pl-lg-0" href="index.html"
+            <a class="nav-link pl-lg-0" href="index.php"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html"> Go to Library</a>
+            <a class="nav-link" href="about.php"> Go to Library</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="contact.php">Contact Us</a>
           </li>
           <!-- <li class="nav-item">
               <i class="bi bi-person-circle"></i>
-              <a class="nav-link" href="contact.html" style="display: inline-block;">Sign In</a>
+              <a class="nav-link" href="contact.php" style="display: inline-block;">Sign In</a>
             </li> -->
         </ul>
         <from class="search_form">
@@ -70,7 +54,7 @@
         </from>
         <li class="nav-item navAccount">
           <i class="bi bi-person-circle ps-2" style="margin-right: -10px"></i>
-          <a class="nav-link" href="login.html" style="display: inline-block"
+          <a class="nav-link" href="login.php" style="display: inline-block"
             >Sign In</a
           >
         </li>
@@ -94,17 +78,13 @@
                 text-decoration-none
               "
             >
-              <svg class="bi me-2" width="40" height="32">
-                <use xlink:href="#bootstrap" />
-              </svg>
               <span class="fs-4">Cathegories</span>
             </a>
             <hr />
             <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item">
                 <a href="#" class="nav-link active" aria-current="page">
-                  </svg>
-                  Clothing
+                  ALL
                 </a>
               </li>
               <li>
@@ -249,7 +229,7 @@
       </div>
     </div>
 
-    <!-- <footer class="footerSection">
+     <footer class="footerSection">
         <div class="container-fluid p-0">
           <div class="row text-left">
             <div class="col-md-5 col-sm-5">
@@ -296,7 +276,7 @@
             </div>
           </div>
         </div>
-      </footer>-->
+</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

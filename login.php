@@ -23,7 +23,7 @@
 <body>
     <div class="limiter">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <span> EBookLover </span>
             </a>
             <button
@@ -41,12 +41,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link pl-lg-0" href="index.html"
+                  <a class="nav-link pl-lg-0" href="index.php"
                     >Home <span class="sr-only">(current)</span></a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="book.html"> Go to Library</a>
+                  <a class="nav-link" href="book.php"> Go to Library</a>
                 </li>
                 <li class="nav-item dropdown">
                   <div class="dropdown">
@@ -55,16 +55,16 @@
                       <a href="#">Fiction</a>
                       <a href="#">Suspense</a>
                       <a href="#">Based on true stories</a>
-                      <a href="./book.html">...</a>
+                      <a href="./book.php">...</a>
                     </div>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                  <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
                 <!-- <li class="nav-item">
                   <i class="bi bi-person-circle"></i>
-                  <a class="nav-link" href="contact.html" style="display: inline-block;">Sign In</a>
+                  <a class="nav-link" href="contact.php" style="display: inline-block;">Sign In</a>
                 </li> -->
               </ul>
               <from class="search_form">
@@ -79,7 +79,7 @@
               </from>
               <li class="nav-item navAccount">
                   <i class="bi bi-person-cirzcle ps-2" style="margin-right: -10px;"></i>
-                  <a class="nav-link" href="login.html" style="display: inline-block;">Sign In</a>
+                  <a class="nav-link" href="login.php" style="display: inline-block;">Sign In</a>
               </li>
             </div>
           </nav>
@@ -114,7 +114,7 @@
 							Forgot Password?
 						</a>
             <p class="text-center pt-3">
-              Don't Have a account? Why not <a href="./signup.html" class="txtSignup"> Sign up</a>
+              Don't Have a account? Why not <a href="./signup.php" class="txtSignup"> Sign up</a>
             </p>
              
 				</form>
