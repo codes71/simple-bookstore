@@ -88,8 +88,8 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link link-dark">
-                  Electronics
+                <a href="#" class="nav-link link-dark" id= "electric">
+                  Education
                 </a>
               </li>
               <li>
@@ -111,10 +111,10 @@
           </div>
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7 col-sm-5">
-            <div class="row row-col-4">
+            <div class="row row-col-4" id="items">
               <?php 
               echo "<br>";
-              $result = $conn->query("SELECT * from books");
+              $result = $conn->query("SELECT * from books order by title");
                 while($row = $result->fetch_assoc()):
               ?>
             <div class="card mb-3 py-3 px-3" style="width: 13rem;">
@@ -191,5 +191,29 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      var ele = document.getElementById('electric');
+      ele.onclick = function (e){
+        console.log("GG");
+        var content = `<?php 
+              echo "<br>";
+              $result = $conn->query("SELECT * from books where cathegory= 'edication' order by title");
+                while($row = $result->fetch_assoc()):
+              ?>
+            <div class="card mb-3 py-3 px-3" style="width: 13rem;">
+                <img src="./Images/<?= $row['Image Path']; ?>"class="card-img-top" alt="...">
+                <div class="card-body" style="background: transparent;">
+                    <h5 class="card-title bookName"><?= $row['title']; ?></h5>
+                    <p class="card-text"><?=$row['description']; ?></p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                    <span class="pricetag"><?= $row['Price']; ?></span>
+                </div>
+            </div>
+            <?php endwhile; ?>`;
+
+        document.getElementById("items").innerHTML = `Hello`;
+        
+      }
+    </script>
   </body>
 </html>
