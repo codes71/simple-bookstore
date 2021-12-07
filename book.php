@@ -6,6 +6,12 @@
   session_start();
   include('db_connect.php');
   include('header.php');
+  if (isset($_GET['category'])) {
+    $category = $_GET['category'];
+    $sql = "SELECT * from books where category like '$category' order by title";
+  } else {
+    $sql = "SELECT * from books order by title";
+  }
   ?>
 </head>
 
@@ -21,7 +27,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link pl-lg-0" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link pl-lg-0" href="index.php"> Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about.php"> Go to Library</a>
@@ -58,33 +64,33 @@
                 link-dark
                 text-decoration-none
               ">
-            <span class="fs-4">Cathegories</span>
+            <span class="fs-4">Categories</span>
           </a>
           <hr />
           <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-              <a href="#" class="nav-link active" aria-current="page">
+              <a href="./book.php" class="nav-link link-dark <?= $category == '' ? "active" : "" ?>" aria-current="page">
                 ALL
               </a>
             </li>
             <li>
-              <a href="?category=education" class="nav-link link-dark" id="electric">
+              <a href="?category=education" class="nav-link link-dark <?= $category == 'education' ? "active" : "" ?>" id="electric">
                 Education
               </a>
             </li>
             <li>
-              <a href="?category=kitchen" class="nav-link link-dark">
+              <a href="?category=kitchen" class="nav-link link-dark <?= $category == 'kitchen' ? "active" : "" ?>">
                 Kitchen
               </a>
             </li>
             <li>
-              <a href="?category=music" class="nav-link link-dark">
+              <a href="?category=music" class="nav-link link-dark <?= $category == 'music' ? "active" : "" ?>">
                 Music
               </a>
             </li>
             <li>
-              <a href="?category=programming" class="nav-link link-dark">
-                programming
+              <a href="?category=programming" class="nav-link link-dark <?= $category == 'programming' ? "active" : "" ?>">
+                Programming
               </a>
             </li>
           </ul>
@@ -93,18 +99,11 @@
       <div class="col-xl-9 col-lg-8 col-md-7 col-sm-5">
         <div class="row row-col-4" id="items">
           <?php
-          echo "<br>";
-          if (isset($_GET['category'])) {
-            $category = $_GET['category'];
-            $sql = "SELECT * from books where category like '$category' order by title";
-          } else {
-            $sql = "SELECT * from books order by title";
-          }
           $result = $conn->query($sql);
           while ($row = $result->fetch_assoc()) :
           ?>
             <div class="card mb-3 py-3 px-3" style="width: 13rem;">
-              <img src="./Images/<?= $row['image_path']; ?>" class="card-img-top" alt="...">
+              <img src="./images/Book 1.jpg?= $row['image_path']; ?>" class="card-img-top" alt="...">
               <div class="card-body" style="background: transparent;">
                 <h5 class="card-title bookName"><?= $row['title']; ?></h5>
                 <p class="card-text"><?= $row['description']; ?></p>
