@@ -6,10 +6,8 @@
   session_start();
   include('db_connect.php');
   include('header.php');
-  include('function.php');
   ?>
 </head>
-
 <body>
   <header class="top">
     <nav class="navbar navbar-expand-lg custom_nav-container">

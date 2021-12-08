@@ -54,7 +54,7 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-xl-3 col-lg-4 col-md-5 col-sm-7">
+      <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5">
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px">
           <a href="/" class="
                 d-flex
@@ -96,14 +96,14 @@
           </ul>
         </div>
       </div>
-      <div class="col-xl-9 col-lg-8 col-md-7 col-sm-5">
+      <div class="col-xl-9 col-lg-8 col-md-7 col-sm-7">
         <div class="row row-col-4" id="items">
           <?php
           $result = $conn->query($sql);
           while ($row = $result->fetch_assoc()) :
           ?>
             <div class="card mb-3 py-3 px-3" style="width: 13rem;">
-              <img src="./images/Book 1.jpg?= $row['image_path']; ?>" class="card-img-top" alt="...">
+              <img src="./images/<?= $row['image_path']; ?>" class="card-img-top" alt="...">
               <div class="card-body" style="background: transparent;">
                 <h5 class="card-title bookName"><?= $row['title']; ?></h5>
                 <p class="card-text"><?= $row['description']; ?></p>

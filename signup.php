@@ -2,14 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log-in/Sign Up</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <?php include('header.php');?>
 </head>
 
 <body>
@@ -70,7 +63,7 @@
           <div class="wrap-input-sn col" data-validate="Enter Last Name">
             <input class="input" type="text" name="secondname" placeholder="Second Name">
           </div>
-          <div class="wrap-input-sn col" data-validate="Password">
+          <div class="wrap-input-sn col-12" data-validate="Password">
             <input class="input" type="password" name="password" placeholder="Enter a strong password">
           </div>
           <div class="wrap-input col-12" data-validate="Enter Email">
