@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include('header.php'); ?>
+    <?php include('header.php');
+    require_once('db_connect.php');
+    $errors[]="";
+    ?>
 </head>
 <body>
     <div class="limiter">
@@ -62,21 +65,21 @@
               </from>
               <li class="nav-item navAccount">
                   <i class="bi bi-person-circle ps-2" style="margin-right: -10px;"></i>
-                  <a class="nav-link" href="login.php" style="display: inline-block;">Sign In</a>
+                  <a class="nav-link" href="signup.php" style="display: inline-block;">Sign Up</a>
               </li>
             </div>
           </nav>
 		<div class="container-login" style="background-image: url('./images/accountbackground.jpg');">
 			<div class="wrap-login">
-				<form class="loginform">
-					
-
+				<form class="loginform" method="post" action="login.php">
 					<div class="wrap-input" data-validate = "Enter username">
-						<input class="input" type="text" name="username" placeholder="Username">
+						<input class="input" type="text" name="username" placeholder="Username"> 
+            <span class="text-danger ps-4"></span>
 					</div>
 
 					<div class="wrap-input validate-input" data-validate="Enter password">
 						<input class="input" type="password" name="pass" placeholder="Password">
+            <span class="text-danger ps-4"></span>
 					</div>
 
 					<div class="rememberCheckbox">
