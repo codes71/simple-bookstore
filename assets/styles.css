@@ -9,7 +9,6 @@ a {
 }
 header {
   overflow-x: hidden;
-  
 }
 
 /* For account Login */
@@ -62,14 +61,14 @@ button:hover {
   border-bottom: 2px solid #f309093d;
   margin-bottom: 30px;
 }
-.wrap-input-fn {
+.wrap-input-ps {
   width: 100%;
   position: relative;
   border-right: 2px solid #f30909e8;
   border-bottom: 2px solid #f309093d;
   margin-bottom: 30px;
 }
-.wrap-input-sn {
+.wrap-input-cps {
   width: 100%;
   position: relative;
   border-bottom: 2px solid #f309093d;
@@ -89,8 +88,8 @@ button:hover {
   background: transparent;
   padding: 0 5px 0 0;
 }
-.wrap-input-fs .input {
-  font-size: 20px;
+.wrap-input-ps .input {
+  font-size: 1rem;
   color: rgb(24, 22, 22);
   line-height: 1.2;
   font-weight: 500;
@@ -98,10 +97,10 @@ button:hover {
   width: 100%;
   height: 45px;
   background: transparent;
-  /* padding: 0 5px 0 0; */
+  padding: 0 5px 0 0;
 }
 .wrap-input-cps .input {
-  font-size: 20px;
+  font-size: 1rem;
   color: rgb(24, 22, 22);
   line-height: 1.2;
   font-weight: 500;
@@ -109,7 +108,7 @@ button:hover {
   width: 100%;
   height: 45px;
   background: transparent;
-  /* padding: 0 5px 0 0; */
+  padding: 0 5px 0 0;
 }
 .rememberCheckbox {
   padding: 5px 10px 25px 0;
@@ -436,24 +435,21 @@ button:hover {
   color: rgba(0, 0, 0, 0.5);
 }
 
-
 /* for book cathegory */
-.card{
+.card {
   margin: 0 0.8em;
 }
-.cathegory .catheList{
+.cathegory .catheList {
   list-style-type: none;
   padding-top: 1.5em;
 }
-.cathegory .items{
+.cathegory .items {
   padding: 2px 0 0 5px;
   margin: 5px 0;
   display: inline-flex;
   flex-wrap: nowrap;
   background-color: rgb(238, 169, 65);
 }
-
-
 
 /* footer */
 
