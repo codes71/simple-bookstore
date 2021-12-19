@@ -59,26 +59,25 @@ button:hover {
   width: 100%;
   position: relative;
   border-bottom: 2px solid #f309093d;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 .wrap-input-ps {
   width: 100%;
   position: relative;
-  border-right: 2px solid #f30909e8;
   border-bottom: 2px solid #f309093d;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 .wrap-input-cps {
   width: 100%;
   position: relative;
   border-bottom: 2px solid #f309093d;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 .wrap-input .col {
   border-left: 2px solid rgba(255, 255, 255, 0.24);
 }
 .wrap-input .input {
-  font-size: 20px;
+  font-size:  1.2rem;
   color: rgb(24, 22, 22);
   line-height: 1.2;
   font-weight: 500;
@@ -89,7 +88,7 @@ button:hover {
   padding: 0 5px 0 0;
 }
 .wrap-input-ps .input {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: rgb(24, 22, 22);
   line-height: 1.2;
   font-weight: 500;
@@ -100,7 +99,7 @@ button:hover {
   padding: 0 5px 0 0;
 }
 .wrap-input-cps .input {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: rgb(24, 22, 22);
   line-height: 1.2;
   font-weight: 500;

@@ -52,12 +52,17 @@
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </from>
-        
+        <?php if(isset($_SESSION['loggedin'])): ?>
+        <li class="nav-item navAccount">
+          <i class="bi bi-person-circle ps-2" style="margin-right: -10px;"></i>
+          <a class="nav-link" href="login.php" style="display: inline-block;"><?php echo $_SESSION['username'] ?></a>
+        </li>
+        <?php else: ?>
         <li class="nav-item navAccount">
           <i class="bi bi-person-circle ps-2" style="margin-right: -10px;"></i>
           <a class="nav-link" href="login.php" style="display: inline-block;">Sign In</a>
         </li>
-
+        <?php endif; ?>
       </div>
     </nav>
     <section class="slider-part">

@@ -1,6 +1,7 @@
 <?php
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "Invalid";
+include('db_connect.php');
+$username = $password = $confirm_password = $email= "";
+$username_err = $password_err = $confirm_password_err = $email_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -11,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username_err = "Username can only contain letters, numbers, and underscores.";
   } else {
     // Prepare a select statement
-    $sql = "SELECT id FROM users WHERE username = ?";
+    $sql = "SELECT id FROM user WHERE name = ?";
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    if ($stmt = mysqli_prepare($conn, $sql)) {
       // Bind variables to the prepared statement as parameters
       mysqli_stmt_bind_param($stmt, "s", $param_username);
 
@@ -58,40 +59,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  // Check input errors before inserting in database
-  if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
-
-    // Prepare an insert statement
-    $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-
-    if ($stmt = mysqli_prepare($link, $sql)) {
-      // Bind variables to the prepared statement as parameters
-      mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
-
-      // Set parameters
-      $param_username = $username;
-      $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-
-      // Attempt to execute the prepared statement
-      if (mysqli_stmt_execute($stmt)) {
-        // Redirect to login page
-        header("location: login.php");
-      } else {
-        echo "Oops! Something went wrong. Please try again later.";
-      }
-
-      // Close statement
-      mysqli_stmt_close($stmt);
+  //Validate E-mail
+  if (empty(trim($_POST["email"]))) {
+    $email_err = "Email is required";
+  } else {
+    $email = trim($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $email_err = "Invalid email format";
     }
   }
+  // Check input errors before inserting in database
+  if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)) {
+    $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+    $sql = "INSERT INTO user (name,password,email)
+    VALUES ('$username','$hashed_password','$email')";
 
-  // Close connection
-  mysqli_close($link);
-}
+    if (mysqli_query($conn, $sql)) {
+      header("location : /login.php");
+    } else {
+       echo "Error: " . $sql . ":-" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+    }
+    }
 ?>
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,22 +143,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
     <div class="container-login" style="background-image: url('./images/accountbackground.jpg');">
       <div class="wrap-login">
-        <form class="loginform row g-3">
-          <div class="wrap-input col-12" data-validate="Enter First Name">
-            <input class="input" type="text" name="username" placeholder="User name">
+        <form class="loginform row g-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+          <div class="wrap-input col" data-validate="Enter First Name">
+            <input class="input" type="text" name="username" placeholder="Username" value="admin2">
           </div>
-          <?= $username_err ?>
-          <div class="wrap-input-ps col-6" data-validate="Password">
-            <input class="input" type="password" name="password" placeholder="Enter a strong password">
+          <div class="text-danger"><?= $username_err ?> </div>
+          <div class="wrap-input-ps col-6 data-validate="Password">
+            <input class="input" type="password" name="password" placeholder="Enter password" value="admin2123">
           </div>
+          <div class="text-danger"><?= $password_err ?> </div>
           <div class="wrap-input-cps col-6" data-validate="Password">
-            <input class="input" type="password" name="confirm_password" placeholder="Confirm password">
+            <input class="input" type="password" name="confirm_password" placeholder="Confirm password" value="admin2123">
           </div>
+          <div class="text-danger"><?= $confirm_password_err ?> </div>
           <div class="wrap-input col-12" data-validate="Enter Email">
-            <input class="input" type="text" name="email" placeholder="Enter E-Mail">
+            <input class="input" type="email" name="email" placeholder="Enter E-Mail" value="admin@gmail.com">
           </div>
+          <div class="text-danger"><?= $email_err ?> </div>
           <div class="wrap-input col" data-validate="Phone Number">
-            <input class="input" type="number" name="phonenumber" placeholder="Phone Number">
+            <input class="input" type="number" name="phonenumber" placeholder="Phone Number" value="0995263214">
           </div>
 
           <div class="container-login-form-btn">
