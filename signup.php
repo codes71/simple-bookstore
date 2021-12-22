@@ -1,6 +1,6 @@
 <?php
 include('db_connect.php');
-$username = $password = $confirm_password = $email= "";
+$username = $password = $confirm_password = $email = "";
 $username_err = $password_err = $confirm_password_err = $email_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -71,18 +71,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   // Check input errors before inserting in database
   if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)) {
-    $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO user (name,password,email)
     VALUES ('$username','$hashed_password','$email')";
 
     if (mysqli_query($conn, $sql)) {
-      header("location : /login.php");
+      header("location: login.php");
     } else {
-       echo "Error: " . $sql . ":-" . mysqli_error($conn);
+      echo "Error: " . $sql . ":-" . mysqli_error($conn);
     }
     mysqli_close($conn);
-    }
-    }
+  }
+}
+$file = './signup.php';
+$_SESSION['currentpage'] = basename($file, '.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,53 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
   <div class="limiter">
-    <nav class="navbar navbar-expand-lg custom_nav-container">
-      <a class="navbar-brand" href="index.php">
-        <span> EBookLover </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link pl-lg-0" href="index.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.php"> Go to Library</a>
-          </li>
-          <li class="nav-item dropdown">
-            <div class="dropdown">
-              <a href="#" class="nav-link">Category</a>
-              <div class="dropdown-content">
-                <a href="#">Fiction</a>
-                <a href="#">Suspense</a>
-                <a href="#">Based on true stories</a>
-                <a href="./book.php">...</a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact Us</a>
-          </li>
-          <!-- <li class="nav-item">
-                  <i class="bi bi-person-circle"></i>
-                  <a class="nav-link" href="contact.php" style="display: inline-block;">Sign In</a>
-                </li> -->
-        </ul>
-        <from class="search_form">
-          <input type="text" class="form-control" placeholder="Search here..." />
-          <button class="" type="submit">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </from>
-        <li class="nav-item navAccount">
-          <i class="bi bi-person-circle ps-2" style="margin-right: -10px;"></i>
-          <a class="nav-link" href="login.php" style="display: inline-block;">Sign In</a>
-        </li>
-      </div>
-    </nav>
+    <?php include("navbar.php") ?>
     <div class="container-login" style="background-image: url('./images/accountbackground.jpg');">
       <div class="wrap-login">
         <form class="loginform row g-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -148,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input class="input" type="text" name="username" placeholder="Username" value="admin2">
           </div>
           <div class="text-danger"><?= $username_err ?> </div>
-          <div class="wrap-input-ps col-6 data-validate="Password">
+          <div class="wrap-input-ps col-6 data-validate=" Password">
             <input class="input" type="password" name="password" placeholder="Enter password" value="admin2123">
           </div>
           <div class="text-danger"><?= $password_err ?> </div>
