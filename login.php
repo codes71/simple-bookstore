@@ -89,13 +89,14 @@ $_SESSION['currentpage'] = basename($file, '.php');
       <div class="wrap-login">
         <form class="loginform" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
           <div class="wrap-input" data-validate="Enter username">
-            <input class="input" type="text" name="username" placeholder="Username" value="<?= isset($_POST["username"]) ? $_POST["username"]: ""; ?>">
+            <input class="input" type="text" name="username" placeholder="Username" value="<?= isset($_POST["username"]) ? $_POST["username"] : ""; ?>">
           </div>
           <div class="text-danger"><?= $username_err ?> </div>
           <div class="wrap-input validate-input" data-validate="Enter password">
-            <input class="input" type="password" name="password" placeholder="Password" value="<?= isset($_POST["password"]) ? $_POST["password"]: ""; ?>">
-            <i class="bi bi-eye-slash eicon" id="togglePassword"></i>
+            <input id="password" class="input" type="password" name="password" placeholder="Password" value="<?= isset($_POST["password"]) ? $_POST["password"] : ""; ?>">
+            <i class="bi bi-eye-fill eicon" id="togglePassword"></i>
           </div>
+
           <div class="text-danger"><?= $password_err ?> </div>
           <div class="rememberCheckbox">
             <input class="form-check-input" id="ckb1" type="checkbox" name="remember-me">

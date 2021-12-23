@@ -1,13 +1,8 @@
 <?php
 include('db_connect.php');
-<<<<<<< HEAD
-$username = $password = $confirm_password = $email = $phno= "";
-$username_err = $password_err = $confirm_password_err = $email_err = $phno_err="";
-=======
 session_start();
 $username = $password = $confirm_password = $email = "";
 $username_err = $password_err = $confirm_password_err = $email_err = "";
->>>>>>> 9ad7143f8c55d482ffd9db53fda3d264c5ae1725
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -121,10 +116,12 @@ $_SESSION['currentpage'] = basename($file, '.php');
           <div class="text-danger"><?= $username_err ?> </div>
           <div class="wrap-input-ps col-6" data-validate="Password">
             <input class="input" type="password" name="password" placeholder="Enter password" value="<?= isset($_POST["password"]) ? $_POST["password"] : ""; ?>">
+            <i class="bi bi-eye-fill eicon" id="togglePassword"></i>
           </div>
           <div class="text-danger"><?= $password_err ?> </div>
           <div class="wrap-input-cps col-6" data-validate="Password">
             <input class="input" type="password" name="confirm_password" placeholder="Confirm password" value="">
+            <i class="bi bi-eye-fill eicon" id="togglePassword"></i>
           </div>
           <div class="text-danger"><?= $confirm_password_err ?> </div>
           <div class="wrap-input col-12" data-validate="Enter Email">
