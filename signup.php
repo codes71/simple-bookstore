@@ -1,7 +1,7 @@
 <?php
 include('db_connect.php');
-$username = $password = $confirm_password = $email = "";
-$username_err = $password_err = $confirm_password_err = $email_err = "";
+$username = $password = $confirm_password = $email = $phno= "";
+$username_err = $password_err = $confirm_password_err = $email_err = $phno_err="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -69,6 +69,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $email_err = "Invalid email format";
     }
   }
+  //validate Phone Number
+  if (empty(trim($_POST["phno"]))) {
+    $phno_err = "Please enter a Phone number.";
+  } elseif (strlen(trim($_POST["phno"])) < 9 ) {
+    $phno_err = "Password must have atleast 6 characters.";
+  } else {
+    $phno = trim($_POST["phno"]);
+  }
+
   // Check input errors before inserting in database
   if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -101,26 +110,26 @@ $_SESSION['currentpage'] = basename($file, '.php');
       <div class="wrap-login">
         <form class="loginform row g-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
           <div class="wrap-input col" data-validate="Enter First Name">
-            <input class="input" type="text" name="username" placeholder="Username" value="admin2">
+            <input class="input" type="text" name="username" placeholder="Username" value="<?= isset($_POST["username"]) ? $_POST["username"]: ""; ?>">
           </div>
           <div class="text-danger"><?= $username_err ?> </div>
-          <div class="wrap-input-ps col-6 data-validate=" Password">
-            <input class="input" type="password" name="password" placeholder="Enter password" value="admin2123">
+          <div class="wrap-input-ps col-6" data-validate="Password">
+            <input class="input" type="password" name="password" placeholder="Enter password" value="<?= isset($_POST["password"]) ? $_POST["password"] : ""; ?>">
           </div>
           <div class="text-danger"><?= $password_err ?> </div>
           <div class="wrap-input-cps col-6" data-validate="Password">
-            <input class="input" type="password" name="confirm_password" placeholder="Confirm password" value="admin2123">
+            <input class="input" type="password" name="confirm_password" placeholder="Confirm password" value="">
           </div>
           <div class="text-danger"><?= $confirm_password_err ?> </div>
           <div class="wrap-input col-12" data-validate="Enter Email">
-            <input class="input" type="email" name="email" placeholder="Enter E-Mail" value="admin@gmail.com">
+            <input class="input" type="email" name="email" placeholder="Enter E-Mail" value="<?= isset($_POST["email"]) ? $_POST["email"] : "";?>">
           </div>
           <div class="text-danger"><?= $email_err ?> </div>
           <div class="wrap-input col" data-validate="Phone Number">
-            <input class="input" type="number" name="phonenumber" placeholder="Phone Number" value="0995263214">
+            <input class="input" type="number" name="phno" placeholder="Phone Number" value="<?= isset($_POST["phno"]) ? $_POST["phno"] : "" ;?>">
           </div>
-
-          <div class="container-login-form-btn">
+          <div class="text-danger"><?= $phno_err ?> </div> <br>
+          <div class="container-login-form-btn"> 
             <button class="login-form-btn">
               Sign Up
             </button>
