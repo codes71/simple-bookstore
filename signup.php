@@ -1,7 +1,13 @@
 <?php
 include('db_connect.php');
+<<<<<<< HEAD
 $username = $password = $confirm_password = $email = $phno= "";
 $username_err = $password_err = $confirm_password_err = $email_err = $phno_err="";
+=======
+session_start();
+$username = $password = $confirm_password = $email = "";
+$username_err = $password_err = $confirm_password_err = $email_err = "";
+>>>>>>> 9ad7143f8c55d482ffd9db53fda3d264c5ae1725
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
