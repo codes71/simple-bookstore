@@ -1,5 +1,6 @@
 <?php
 include('db_connect.php');
+session_start();
 $username = $password = $confirm_password = $email = "";
 $username_err = $password_err = $confirm_password_err = $email_err = "";
 

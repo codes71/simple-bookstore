@@ -43,10 +43,10 @@
             <li class="nav-item navAccount dropdown">
                 <i class="bi bi-person-circle ps-2" style="margin-right: -10px;"></i>
                 <a class="nav-link" href="login.php" style="display: inline-block;"><?php echo $_SESSION['username'] ?></a>
-                <!-- <div class="dropdown-content">
-                <a href="#">Manage Account</a>
-                <a href="#">Log-Out</a>
-                </div> -->
+                <div class="dropdown-content">
+                    <a href="#">Manage Account</a>
+                    <a href="logout.php">Log-Out</a>
+                </div>
             </li>
         <?php else : ?>
             <li class="nav-item navAccount">
