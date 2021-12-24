@@ -1,8 +1,8 @@
 <?php
 include('db_connect.php');
 session_start();
-$username = $password = $confirm_password = $email = "";
-$username_err = $password_err = $confirm_password_err = $email_err = "";
+$username = $password = $confirm_password = $email = $phno ="";
+$username_err = $password_err = $confirm_password_err = $email_err =$phno_err ="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -115,13 +115,13 @@ $_SESSION['currentpage'] = basename($file, '.php');
           </div>
           <div class="text-danger"><?= $username_err ?> </div>
           <div class="wrap-input-ps col-6" data-validate="Password">
-            <input class="input" type="password" name="password" placeholder="Enter password" value="<?= isset($_POST["password"]) ? $_POST["password"] : ""; ?>">
-            <i class="bi bi-eye-fill eicon" id="togglePassword"></i>
+            <input id="password" class="input" type="password" name="password" placeholder="Enter password" value="<?= isset($_POST["password"]) ? $_POST["password"] : ""; ?>">
+            <i class="bi bi-eye-fill eicon" onclick="toggleButton(this,'password')"></i>
           </div>
           <div class="text-danger"><?= $password_err ?> </div>
           <div class="wrap-input-cps col-6" data-validate="Password">
-            <input class="input" type="password" name="confirm_password" placeholder="Confirm password" value="">
-            <i class="bi bi-eye-fill eicon" id="togglePassword"></i>
+            <input  id="confirmpassword" class="input" type="password" name="confirm_password" placeholder="Confirm password" value="">
+            <i class="bi bi-eye-fill eicon" onclick="toggleButton(this,'confirmpassword')"></i>
           </div>
           <div class="text-danger"><?= $confirm_password_err ?> </div>
           <div class="wrap-input col-12" data-validate="Enter Email">
@@ -153,7 +153,7 @@ $_SESSION['currentpage'] = basename($file, '.php');
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+  
   <script src="assets/main.js"></script>
 </body>
 
