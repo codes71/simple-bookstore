@@ -12,7 +12,7 @@
                 <a class="nav-link pl-lg-0" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="book.php"> Go to Library</a>
+                <a class="nav-link" href="book.php"> Go to Library </a>
             </li>
             <li class="nav-item dropdown">
                 <div class="dropdown">
@@ -42,7 +42,7 @@
         <?php if (isset($_SESSION['loggedin'])) : ?>
             <li class="nav-item navAccount dropdown">
                 <i class="bi bi-person-circle ps-2" style="margin-right: -10px;"></i>
-                <a class="nav-link" href="login.php" style="display: inline-block;"><?php echo $_SESSION['username'] ?></a>
+                <span class="nav-link username" href="" style="display: inline-block;  cursor: pointer;"> <?php echo $_SESSION['username']; ?> </span>
                 <div class="dropdown-content">
                     <a href="#">Manage Account</a>
                     <a href="logout.php">Log-Out</a>

@@ -357,6 +357,10 @@ button:hover {
   transition: all 1.5s ease;
   padding: 0.5em 2em;
 }
+.nav-link .username{
+  color: #dd2476;
+  cursor: pointer;
+}
 
 /* slider section */
 .slider-part {

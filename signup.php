@@ -73,8 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //validate Phone Number
   if (empty(trim($_POST["phno"]))) {
     $phno_err = "Please enter a Phone number.";
-  } elseif (strlen(trim($_POST["phno"])) < 9 ) {
-    $phno_err = "Password must have atleast 6 characters.";
+  } elseif (strlen(trim($_POST["phno"])) <= 8 ) {
+    $phno_err = "Phone Number must have at least 9 characters.";
   } else {
     $phno = trim($_POST["phno"]);
   }
@@ -82,8 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Check input errors before inserting in database
   if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO user (name,password,email)
-    VALUES ('$username','$hashed_password','$email')";
+    $sql = "INSERT INTO user (name,password,email,ph_no)
+    VALUES ('$username','$hashed_password','$email',$phno)";
 
     if (mysqli_query($conn, $sql)) {
       header("location: login.php");
